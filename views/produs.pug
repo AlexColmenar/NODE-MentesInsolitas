@@ -1,0 +1,24 @@
+extends ./fijo/index
+
+block contenido
+    main.container.mt-5.texto
+        .row.bg-white.border.rounded-3.shadow-sm.overflow-hidden
+
+            .col-md-6.p-0
+                img(src=`/img/productos/${resultado.imagen}`, alt=`${resultado.nombre}`, class="img-fluid w-100 h-100", style="object-fit: cover; min-height: 400px;")
+
+            .col-md-6.p-4.p-lg-5.d-flex.flex-column.justify-content-center
+                a.text-decoration-none.mb-2(href="/productos") ← Volver a los productos
+
+                h1.mb-3 #{resultado.nombre}
+
+                .d-flex.align-items-center.mb-4
+                    span.badge.bg-primary.fs-4.px-3 #{resultado.precio} €
+
+                hr.mb-4
+
+                h6.text-muted.text-uppercase.fw-bold Detalles del producto
+                p.mb-5 #{resultado.descripcion}
+
+                .d-grid
+                    button.btn.btn-dark.btn-lg(type="button") Añadir al carrito

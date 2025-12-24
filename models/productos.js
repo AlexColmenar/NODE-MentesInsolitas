@@ -11,12 +11,15 @@ export const productos = db.define("productos",{
         type: Sequelize.STRING
     },
     precio:{
-        type: Sequelize.DECIMAL(10.2)
+        type: Sequelize.DECIMAL(10,2)
     },
     descripcion:{
         type: Sequelize.STRING
     },
     imagen:{
+        type: Sequelize.STRING
+    },
+    slug:{
         type: Sequelize.STRING
     },
 },

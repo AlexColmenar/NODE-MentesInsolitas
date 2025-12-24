@@ -8,7 +8,8 @@ moment.locale('es');
 const paginaInicio = async (rec, res) => {
 
     const promiseDB=[ ];
-    promiseDB.push(encuentros.findAll({limit:6}));
+    promiseDB.push(encuentros.findAll({limit:3, order: [["Id", "DESC"]]}));
+    promiseDB.push(productos.findAll({limit:3, order: [["Id", "DESC"]]}));
     promiseDB.push(experiencias.findAll({
         limit: 3,
         order: [["Id", "DESC"]],
@@ -20,8 +21,9 @@ const paginaInicio = async (rec, res) => {
             res.render("inicio", {
                 pagina: "Inicio",
                 clase: "home",
-                experiencias: resultado[1],
+                experiencias: resultado[2],
                 encuentros: resultado[0],
+                productos: resultado [1],
             });
 
     }catch(error){
@@ -72,9 +74,21 @@ const paginaExperiencias = async (req, res) => {
     }
 };
 const paginaProductos = async (req, res) => {
-    res.render("productos", {
-        pagina: "Productos",
-    });
+    try{
+        const producto = await productos.findAll({
+            limit: 21,
+            order: [["Id", "DESC"]],
+
+
+        }); //busca todas las experiencias en BBDD
+        res.render("productos", {
+            pagina: "Productos",
+            productos: producto,
+        });
+    }catch(error)
+    {
+        console.log(error);
+    }
 };
 
 //siempre que quiera consultar a la BBDD hay qie poner await y async que son las promesas y el trycatch para comprobar
@@ -122,6 +136,22 @@ const guardarExperiencias = async (req, res) => {
     }
 };
 
+const paginaDetallesProductos = async (req, res) => {
+    const { slug } = req.params;
+
+    try {
+        const resultado = await productos.findOne({ where: { slug: slug } });
+
+        res.render('produs', {
+            pagina: 'Información del Producto',
+            resultado
+        });
+
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 export {
     paginaInicio,
     quienesSomos,
@@ -129,5 +159,6 @@ export {
     paginaExperiencias,
     paginaProductos,
     guardarExperiencias,
+    paginaDetallesProductos,
 }
 

@@ -3,14 +3,14 @@ extends ./fijo/index
 block contenido
     include ./fijo/header
     .container.mt-5.py-5.texto.text-center
-        h2.col-md-6.mb-2.color NUESTRA HISTORIA
-        .row.mb-5
-            .col-md-6.p-4
-                h5 Nuestra historia comenzó con un propósito claro: transformar la incertidumbre en esperanza. Al observar los desafíos que enfrentan las familias con diagnósticos de TDAH, autismo y otras neurodiversidades, decidimos crear un refugio digital de apoyo y orientación. Lo que empezó como una iniciativa pequeña entre especialistas y padres, ha evolucionado hasta convertirse en una comunidad vibrante dedicada a la inclusión. Creemos que cada niño posee un potencial único que merece ser descubierto. Hoy, seguimos trabajando para brindar herramientas prácticas, derribar barreras y recordarles a las familias que no están solas en este camino. Juntos, construimos un mundo donde la diferencia es nuestra mayor fortaleza
-            .col-md-6
-                img(src="/img/index.jpg" class="img-fluid rounded")
+        .row.bg-white.border.rounded-3.shadow-sm.overflow-hidden
+            h2.col-md-6.mb-2.color NUESTRA HISTORIA
+            .row.mb-5
+                .col-md-6.p-4
+                    h5 Nuestra historia comenzó con un propósito claro: transformar la incertidumbre en esperanza. Al observar los desafíos que enfrentan las familias con diagnósticos de TDAH, autismo y otras neurodiversidades, decidimos crear un refugio digital de apoyo y orientación. Lo que empezó como una iniciativa pequeña entre especialistas y padres, ha evolucionado hasta convertirse en una comunidad vibrante dedicada a la inclusión. Creemos que cada niño posee un potencial único que merece ser descubierto. Hoy, seguimos trabajando para brindar herramientas prácticas, derribar barreras y recordarles a las familias que no están solas en este camino. Juntos, construimos un mundo donde la diferencia es nuestra mayor fortaleza
+                .col-md-6.p-0
+                    img(src="/img/index.jpg", class="img-fluid w-30 h-60", style="object-fit: cover; min-height: 400px;")
 
-    //tengo que llamar a los layout para coger experiencias y productos
     .container.mt-5.py-5.text-xl-center
         .row.texto
             h2.mb-5.color Junto a nosotros podrás encontrar el camino al avance
@@ -30,6 +30,9 @@ block contenido
         .container.texto.mt-5.py-5
             h3.color Algunos de nuestros sitios para quedar y realizar diferentes actividades:
             include ./fijo/layout_encuentros
+        .container.texto.mt-5.py-5
+            h3.color Algunas de nuestros productos:
+            include ./fijo/layout_productos
         .container.texto.mt-5.py-5
             h3.color Algunas de las experiencias de nuestros clientes:
             include ./fijo/layout_experiencias

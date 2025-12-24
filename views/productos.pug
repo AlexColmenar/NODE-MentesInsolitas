@@ -2,5 +2,18 @@ extends ./fijo/index
 
 block contenido
     include ./fijo/header
-
+    .container.p-5.texto
+        h2.text-center
+        p.text-center.mb-5
+            .row
+                each producto in productos
+                    .col-md-6.col-lg-4.mb-5
+                        .card.shadow.border-light.text-bg-light.h-100
+                            img.card-img-top(src=`/img/productos/${producto.imagen}`)
+                            .card-body
+                                .blockquote
+                                h4.text-center.fw-bold #{producto.nombre}
+                                p.text-center #{producto.precio} €
+                                p.text-center #{producto.descripcion}
+                            a(href=`/productos/${producto.slug}`, class="btn btn-primary btn-block") Ver Producto
     include ./fijo/footer
