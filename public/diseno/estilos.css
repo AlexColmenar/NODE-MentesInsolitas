@@ -1,0 +1,47 @@
+.header {
+    min-height: 375px;
+    background: linear-gradient(45deg, #1a4f6d, #319997, #5f72be, #1a4f6d);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+}
+
+.footer{
+    min-height: 200px;
+    background: linear-gradient(45deg, #1a4f6d, #319997, #5f72be, #1a4f6d);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+
+/* Animación para que los colores se muevan solos */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.texto{
+    font-family: "Palatino";
+}
+
+.color{
+    color: royalblue;
+}
+
+.fotosPie{
+width: 250px;
+height: 250px;
+}
+
+.card-img-top {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+    .display-2 {
+        font-size: 2.5rem; /* El título se adapta solo */
+    }
+}
+

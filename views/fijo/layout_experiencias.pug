@@ -1,0 +1,11 @@
+.row.experiencias
+    each experiencia in experiencias
+        .col-md-6.col-lg-4.mb-5
+            .card.shadow.border-dark.text-bg-light
+                .card-body
+                    .blockquote
+                        p.text-center
+                            | "#{experiencia.situaciones}"
+                    .blockquote-footer.text-right
+                        | #{experiencia.nombre}
+
