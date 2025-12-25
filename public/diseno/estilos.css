@@ -38,10 +38,3 @@ height: 250px;
     object-fit: cover;
 }
 
-/* Ajuste para móviles */
-@media (max-width: 768px) {
-    .display-2 {
-        font-size: 2.5rem; /* El título se adapta solo */
-    }
-}
-
