@@ -5,10 +5,10 @@ block contenido
     main.container.mt-5.texto.p-5
         .row.bg-white.border.rounded-3.shadow-sm.overflow-hidden
 
-            .col-md-6.p-0
+            .col-12.col-md-6.p-0
                 img(src=`/img/productos/${resultado.imagen}`, alt=`${resultado.nombre}`, class="img-fluid w-100 h-100", style="object-fit: cover; min-height: 400px;")
 
-            .col-md-6.p-4.p-lg-5.d-flex.flex-column.justify-content-center
+            .p-4.p-lg-5.d-flex.flex-column.justify-content-center
                 a.text-decoration-none.mb-2(href="/productos") ← Volver a los productos
 
                 h1.mb-3 #{resultado.nombre}
@@ -23,4 +23,4 @@ block contenido
 
                 .d-grid
                     button.btn.btn-dark.btn-lg(type="button") Añadir al carrito
-    include ./fijo/header
+    include ./fijo/footer
